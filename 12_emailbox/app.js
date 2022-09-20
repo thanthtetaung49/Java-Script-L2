@@ -18,10 +18,13 @@ function createemaillist(inputtext) {
     const emitems = inputtext.split(",").filter(function (rmempty) {
         
         return rmempty.trim() !== "";
+        
     }).map(function (rmempty) {
         
         return rmempty.trim();
     }); // remove space
+
+    // console.log(emitems);
     
     getemcontainer.innerHTML = "";
     

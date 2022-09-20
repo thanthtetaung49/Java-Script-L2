@@ -42,7 +42,7 @@ function filter() {
 } // end filter function
 
 // METHOD 1
-// start sortin a to z function
+// start sorting a to z function
 function sortingatozm1() {
     // console.log("i am working");
 
@@ -80,38 +80,38 @@ function sortingatozm1() {
     });
 } // end sorting a to z function
 
-// start sorting z to a function
-function sortingztoam1() {
+// // start sorting z to a function
+// function sortingztoam1() {
 
-    var liztoaarys = [];
+//     var liztoaarys = [];
 
-    for(var j = 0; j < getli.length; j++) {
+//     for(var j = 0; j < getli.length; j++) {
 
-        liztoaarys.push(getli[j].textContent);
-    }
+//         liztoaarys.push(getli[j].textContent);
+//     }
 
-    // console.log(liztoaarys.sort().reverse());
+//     // console.log(liztoaarys.sort().reverse());
 
-    var zalis = liztoaarys.sort().reverse();
-    // console.log(zalis);
+//     var zalis = liztoaarys.sort().reverse();
+//     // console.log(zalis);
 
-    getul.innerHTML = "";
+//     getul.innerHTML = "";
 
-    zalis.forEach(function(zali) {
+//     zalis.forEach(function(zali) {
 
-        // console.log(zali);
+//         // console.log(zali);
 
-        var getnewli = document.createElement("li");
-        var getnewlink = document.createElement("a");
-        getnewlink.href = "javascript:void(0);";
-        getnewlink.appendChild(document.createTextNode(zali));
-        getnewli.appendChild(getnewlink);
+//         var getnewli = document.createElement("li");
+//         var getnewlink = document.createElement("a");
+//         getnewlink.href = "javascript:void(0);";
+//         getnewlink.appendChild(document.createTextNode(zali));
+//         getnewli.appendChild(getnewlink);
 
-        getul.appendChild(getnewli);
+//         getul.appendChild(getnewli);
 
-        // console.log(getnewli);
-    });
-} // end sorting z to a function
+//         // console.log(getnewli);
+//     });
+// } // end sorting z to a function
 
 // METHOD 2
 function sortingatozm2() {
@@ -123,26 +123,23 @@ function sortingatozm2() {
 
         switching = false;
 
-        var k = 0;
-
-        for(k; k < getli.length - 1; k++) {
+        for (var k = 0; k < getli.length - 1; k++) {
 
             shouldswitch = false;
 
-            // first < second => A to Z 
-            if(getli[k].textContent.toLowerCase() > getli[k+1].textContent.toLowerCase()) { // false condition
+            if (getli[k].textContent.toLowerCase() > getli[k + 1].textContent.toLowerCase()) {
                 
                 shouldswitch = true;
                 break;
             }
         }
 
-        if(shouldswitch) {
-
-            // parentElement.insertBefore(new, old);
+        if (shouldswitch) {
+            
             getli[k].parentElement.insertBefore(getli[k + 1], getli[k]);
             switching = true;
         }
+
     } while (switching);
 }
 
